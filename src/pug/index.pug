@@ -1,0 +1,19 @@
+extends main/layout
+
+block variables
+    - var title = 'Интернет-магазин салютов и пиротехники'
+    - var headH1 = 'РАБОТЫ НУЛЕВОГО ЦИКЛА СТРОИТЕЛЬСТВА'
+
+block content
+    section.main
+        div.container
+            img(src='img/logo.svg').logo
+
+            div.card.full-width
+                h1.h1 #{title}
+                div.line
+
+            div.certificate
+                img(src='img/certificat.jpeg')
+
+

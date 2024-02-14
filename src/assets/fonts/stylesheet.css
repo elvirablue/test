@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Chianti';
+    src: local('Chianti'),
+        url('chiantibt_bolditalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+

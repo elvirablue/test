@@ -1,0 +1,42 @@
+:root {
+  --white-color: #FFFFFF;
+  --accent-color: #5c23cf;
+  --main-color: #1A1E23;
+  --secondary-color: #494949;
+  --gray-color: #333940;
+  --gray-light-color: #E0E0E0;
+  --gray-lighter-color: #EFEFEF;
+  --error-color: #E30613;
+
+  --text-color: #413339;
+  --gradient-gold: linear-gradient(90deg, #A5630F 0%, #DCB04F 15%, #FFFD66 38%, #C38D34 68%, #FF9A17 87%, #824E0C 100%);
+  --gradient-text: linear-gradient(90deg, #1c020a 0%, #a21041 100%);
+  --gradient-button: linear-gradient(135deg, #8930cb -10%, #fda1ba 110%);
+
+  --action-height: 3.375rem;
+  //--action-large-height: 80px;
+  --action-small-height: 32px;
+
+  --header-height: 5rem;
+  --content-width: 100vw - 1rem;
+  --main-padding: 1.5rem;
+
+  @include media_breakpoint(only-small-desktop) {
+  }
+
+  @include media_breakpoint(only-desktop) {
+    --header-height: 100px;
+    --content-width: 1200px;
+  }
+
+  @include media_breakpoint(mobile) {
+    --main-padding: 0.5rem;
+    --header-height: 3.5rem;
+  }
+}
+
+$scroll-custom-size: 0.25rem;
+$scroll-thumb-bg: var(--text-light-color);
+$scroll-thumb-hover-bg: var(--main-color);
+$scroll-track-bg: var(--gray-color);
+$scroll-thumb-border: 0px solid var(--gray-color);

@@ -1,0 +1,75 @@
+$mq-small-mobile: 568px;
+$mq-mobile: 768px;
+$mq-tablet: 1024px;
+$mq-small-desktop: 1280px;
+
+$media_queries : (
+	'small-mobile'    : unquote("only screen and (max-width: #{$mq-small-mobile}) "),
+	'mobile'    : unquote("only screen and (max-width: #{$mq-mobile}) "),
+	'tablet'    : unquote("only screen and (max-width: #{$mq-tablet}) "),
+	'only-tablet'    : unquote("(min-width: #{$mq-mobile + 1}) and (max-width: #{$mq-tablet}) "),
+	'small-desktop'   : unquote("only screen and (max-width: #{$mq-small-desktop})"),
+	'only-small-desktop'   : unquote("(min-width: #{$mq-tablet + 1}) and (max-width: #{$mq-small-desktop})"),
+	'only-desktop'   : unquote("only screen and (min-width: #{$mq-small-desktop + 1}) "),
+	'landscape' : unquote("screen and (orientation:landscape) "),
+	'portrait'  : unquote("screen and (orientation:portrait) "),
+	'touch-device'	: unquote("(pointer: coarse) and (hover: none) "),
+);
+
+@mixin media_breakpoint($breakpoints) {
+	$conditions : ();
+	@each $breakpoint in $breakpoints {
+		// If the key exists in the map
+		$conditions: append(
+				$conditions,
+				#{inspect(map-get($media_queries, $breakpoint))},
+				comma
+		);
+	}
+
+	@media #{$conditions} {
+		@content;
+	}
+}
+
+
+$column-count: 12;
+$gutters-size: 0.5rem;
+
+@function find_column_width($columns: $column-count) {
+	$column-width: calc(100% / $columns);
+
+	@return $column-width;
+}
+
+@mixin grid($nested: false, $gutters-size: $gutters-size) {
+	display: flex;
+	flex-wrap: wrap;
+	gap: $gutters-size 0;
+	margin: 0 (0 - $gutters-size);
+	width: calc(100% + (2 * $gutters-size));
+
+	@if $nested {
+		flex: 0 1 auto;
+	}
+}
+
+@mixin column($columns: 0, $gutters-size: $gutters-size) {
+	$width: find_column_width();
+	$flex-basis: $width * $columns;
+
+	// Setting $columns = 0 will set the column to be auto width and fill available space
+	@if ($columns == 0) {
+		flex: 1 0 0;
+		width: auto;
+	} @else {
+		flex: 0 0 $flex-basis;
+		min-width: $flex-basis;
+		padding: 0 $gutters-size;
+	}
+}
+
+@mixin column-padding($gutters-size: $gutters-size) {
+	padding: 0 $gutters-size;
+
+}

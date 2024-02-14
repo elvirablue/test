@@ -1,0 +1,33 @@
+.row {
+  @include grid();
+
+  &--wide {
+    @include grid(false, 2rem);
+
+    > [class*=col] {
+      padding: 0 2rem !important;
+    }
+  }
+}
+
+.col {
+  @include column();
+}
+
+@for $i from 1 through 12 {
+  .col-#{$i} {
+    @include column($i);
+  }
+
+  @include media_breakpoint(tablet) {
+    .col-md-#{$i} {
+      @include column($i);
+    }
+  }
+
+  @include media_breakpoint(mobile) {
+    .col-sm-#{$i} {
+      @include column($i);
+    }
+  }
+}

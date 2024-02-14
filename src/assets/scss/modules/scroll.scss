@@ -1,0 +1,113 @@
+.app {
+  scrollbar-color: $scroll-thumb-bg $scroll-thumb-hover-bg;
+  scrollbar-track-color: $scroll-track-bg;
+  scrollbar-width: thin;
+
+
+  ::-webkit-scrollbar-button {
+    background-image: none;
+    background-repeat: no-repeat;
+    width: 0;
+    height: 0;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: $scroll-track-bg;
+  }
+
+  ::-webkit-scrollbar-track:vertical{
+    margin: 8px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border-radius: $scroll-custom-size;
+    background-color: $scroll-thumb-bg;
+    min-height: 105px;
+    background-clip: padding-box;
+  }
+
+  ::-webkit-scrollbar-thumb:horizontal {
+    border-top: $scroll-thumb-border;
+    border-bottom: $scroll-thumb-border;
+  }
+
+  ::-webkit-scrollbar-thumb:vertical {
+    border-left: $scroll-thumb-border;
+    border-right: $scroll-thumb-border;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: $scroll-thumb-hover-bg;
+  }
+
+  ::-webkit-resizer {
+    background-image: none;
+    background-repeat: no-repeat;
+    width: $scroll-custom-size;
+    height: $scroll-custom-size;
+  }
+
+  ::-webkit-scrollbar {
+    width: $scroll-custom-size;
+    height: $scroll-custom-size;
+  }
+
+  ::-moz-scrollbar-button {
+    background-image: none;
+    background-repeat: no-repeat;
+    width: 0;
+    height: 0;
+  }
+
+  ::-moz-scrollbar-track {
+    background-color: $scroll-track-bg;
+  }
+
+  ::-moz-scrollbar-track:vertical {
+    margin: 8px;
+  }
+
+  ::-moz-scrollbar-thumb {
+    border-radius: $scroll-custom-size;
+    background-color: $scroll-thumb-bg;
+    min-height: 105px;
+    background-clip: padding-box;
+  }
+
+  ::-moz-scrollbar-thumb:horizontal {
+    border-top: $scroll-thumb-border;
+    border-bottom: $scroll-thumb-border;
+  }
+
+  ::-moz-scrollbar-thumb:vertical {
+    border-left: $scroll-thumb-border;
+    border-right: $scroll-thumb-border;
+  }
+
+  ::-moz-scrollbar-thumb:hover {
+    background-color: $scroll-thumb-hover-bg;
+  }
+
+  ::-moz-resizer {
+    background-image: none;
+    background-repeat: no-repeat;
+    width: $scroll-custom-size;
+    height: $scroll-custom-size;
+  }
+
+  ::-moz-scrollbar {
+    width: $scroll-custom-size;
+    height: $scroll-custom-size;
+  }
+
+  // Для сенсорных устройств:
+  @media (pointer: coarse) and (hover: none) {
+    scrollbar-width: none;
+
+    ::-webkit-scrollbar {
+      width: 0;
+      display: none;
+    }
+  }
+}
+

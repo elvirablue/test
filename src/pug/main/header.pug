@@ -1,0 +1,25 @@
+include ../mixins/socials
+-
+    const navList = [
+        {title: 'Каталог', svg: 'menu'},
+        {title: 'Система лояльности', svg: 'loyality'},
+        {title: 'Вход в ЛК', svg: 'login'},
+        {title: 'Доставка и оплата', svg: 'delivery'},
+        {title: 'Оптовые закупки', svg: 'mens'},
+        {title: 'Производители', svg: 'box'},
+        {title: 'ТМ Взлёт', svg: 'medal'},
+        {title: 'ПироБлог', svg: 'book'},
+        {title: 'Контакты', svg: 'mail'},
+    ]
+- var phone = '+7 (999) 000 - 00 - 00'
+
+header.app-header
+    div.app-header__wrap
+        a.app-header__logo(href='/')
+            img(src='img/logo-small.svg')
+        nav#Menu.app-nav
+            each item in navList
+                a.__link(href='/')
+                    svg.s-24
+                        use(href="img/sprite.svg#"+item.svg)
+                    span #{item.title}

@@ -1,0 +1,38 @@
+.app-nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  gap: 1rem;
+  color: var(--secondary-color);
+
+  &__link {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "Fira Mono", sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 15px;
+    text-align: center;
+    transition: all 0.1s ease-in-out;
+
+    span {
+      display: inline-block;
+    }
+
+    &:hover, &:active, &.active {
+      font-weight: 700;
+      color: var(--accent-color);
+    }
+  }
+
+  @include media_breakpoint(tablet) {
+
+  }
+
+  @include media_breakpoint(mobile) {
+
+  }
+}

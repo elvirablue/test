@@ -1,0 +1,133 @@
+.fill-height {
+  height: 100% !important;
+}
+
+.full-width {
+  width: 100% !important;
+}
+
+.gray-light-color {
+  color: var(--gray-light-color);
+}
+
+.accent-color {
+  color: var(--accent-color);
+}
+
+.white-color {
+  color: var(--white-color);
+}
+
+.mobile-hidden {
+  @include media_breakpoint(mobile) {
+    overflow: hidden;
+  }
+}
+
+@for $i from 1 through 24 {
+  .gap-#{$i * 4} {
+    gap: #{$i * 0.25}rem;
+  }
+}
+
+@for $i from 1 through 16 {
+  .pt-#{$i * 8} {
+    padding-top: #{$i * 0.5}rem;
+  }
+  .pb-#{$i * 8} {
+    padding-bottom: #{$i * 0.5}rem;
+  }
+  .pl-#{$i * 8} {
+    padding-left: #{$i * 0.5}rem;
+  }
+  .pr-#{$i * 8} {
+    padding-right: #{$i * 0.5}rem;
+  }
+}
+
+.ml-auto {
+  margin-left: auto;
+}
+.mr-auto {
+  margin-right: auto;
+}
+.m-auto {
+  margin: auto;
+}
+
+@for $i from 1 through 10 {
+  .opacity-#{$i * 10} {
+    opacity: #{$i * 0.1};
+  }
+}
+
+@for $i from 4 through 12 {
+  svg.s-#{$i * 4} {
+    width: #{$i * 0.25}rem;
+    height: #{$i * 0.25}rem;
+  }
+}
+
+.text-contents {
+  display: block;
+  width: 100%;
+  font-size: 1rem;
+  line-height: 1.25;
+  color: var(--text-color);
+
+  p {
+    margin: 0;
+    padding-bottom: 1rem;
+  }
+
+  .h1, .h2, .h3, .h4 {
+    margin: 0;
+    padding-bottom: 2rem;
+  }
+
+  *:last-child {
+    padding-bottom: 0;
+  }
+}
+
+.image-radius {
+  $image-radius: 7.5rem;
+  $image-radius-mobile: 5rem;
+
+  display: inline-flex;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+
+  img {
+    object-fit: cover;
+  }
+
+  &.image-radius--top-left {
+    border-top-left-radius: $image-radius;
+  }
+  &.image-radius--top-right {
+    border-top-right-radius: $image-radius;
+  }
+  &.image-radius--bottom-left {
+    border-bottom-left-radius: $image-radius;
+  }
+  &.image-radius--bottom-right {
+    border-bottom-right-radius: $image-radius;
+  }
+
+  @include media_breakpoint(mobile) {
+    &.image-radius--top-left {
+      border-top-left-radius: $image-radius-mobile;
+    }
+    &.image-radius--top-right {
+      border-top-right-radius: $image-radius-mobile;
+    }
+    &.image-radius--bottom-left {
+      border-bottom-left-radius: $image-radius-mobile;
+    }
+    &.image-radius--bottom-right {
+      border-bottom-right-radius: $image-radius-mobile;
+    }
+  }
+}
