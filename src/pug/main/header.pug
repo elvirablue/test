@@ -6,7 +6,7 @@ include ../mixins/socials
         {title: 'Вход в ЛК', svg: 'login'},
         {title: 'Доставка и оплата', svg: 'delivery'},
         {title: 'Оптовые закупки', svg: 'mens'},
-        {title: 'Производители', svg: 'box'},
+        {title: 'Производи&shy;тели', svg: 'box'},
         {title: 'ТМ Взлёт', svg: 'medal'},
         {title: 'ПироБлог', svg: 'book'},
         {title: 'Контакты', svg: 'mail'},
@@ -22,4 +22,4 @@ header.app-header
                 a.__link(href='/')
                     svg.s-24
                         use(href="img/sprite.svg#"+item.svg)
-                    span #{item.title}
+                    span !{item.title}
